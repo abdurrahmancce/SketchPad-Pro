@@ -56,7 +56,6 @@ A modern and feature-rich drawing application built with **Python**, **Tkinter**
 
 # 📸 Screenshots
 
-> Add screenshots here after running the application.
 
 ```
 screenshots/
