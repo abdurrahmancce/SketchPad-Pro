@@ -118,7 +118,7 @@ class CanvasManager:
         self.undo_stack = []      # list of PIL Image snapshots
         self.MAX_UNDO   = 30
 
-        # ── Tkinter Canvas ──────────────────────────────
+        #  Tkinter Canvas 
         self.canvas = tk.Canvas(
             parent,
             width=width, height=height,
@@ -127,7 +127,7 @@ class CanvasManager:
             bd=0, highlightthickness=0
         )
 
-        # ── PIL backing image ────────────────────────────
+        # PIL backing image 
         self._reset_pil()
 
         # last mouse position for smooth strokes
@@ -139,7 +139,7 @@ class CanvasManager:
         self.canvas.bind("<B1-Motion>",       self._on_drag)
         self.canvas.bind("<ButtonRelease-1>", self._on_release)
 
-    # ── PIL init / reset ─────────────────────────────────
+    #  PIL init / reset 
     def _reset_pil(self):
         """Create a fresh white PIL image."""
         self.pil_image = Image.new("RGBA", (self.width, self.height),
@@ -147,7 +147,7 @@ class CanvasManager:
                                    else self.tm.bg_color)
         self.pil_draw  = ImageDraw.Draw(self.pil_image, "RGBA")
 
-    # ── Undo support ─────────────────────────────────────
+    #  Undo support 
     def push_undo(self):
         """Snapshot current PIL image onto undo stack."""
         if len(self.undo_stack) >= self.MAX_UNDO:
@@ -161,7 +161,7 @@ class CanvasManager:
         self.pil_draw  = ImageDraw.Draw(self.pil_image, "RGBA")
         self._refresh_canvas()
 
-    # ── Canvas → PIL sync ────────────────────────────────
+    #  Canvas → PIL sync 
     def _refresh_canvas(self):
         """Redraw Tkinter Canvas from PIL image."""
         self._tk_image = ImageTk.PhotoImage(self.pil_image)
@@ -180,7 +180,7 @@ class CanvasManager:
             self.canvas.create_line(0, y, self.width, y,
                                     fill="#cccccc55", dash=(2, 4))
 
-    # ── Mouse event handlers ─────────────────────────────
+    # Mouse event handlers 
     def _on_press(self, event):
         self.push_undo()
         x, y = event.x, event.y
@@ -281,7 +281,7 @@ class CanvasManager:
         except Exception as e:
             print(f"Fill error: {e}")
 
-    # ── Text insertion ───────────────────────────────────
+    #  Text insertion 
     def _insert_text(self, x, y):
         text = simpledialog.askstring("Insert Text", "Enter text:",
                                       parent=self.canvas)
