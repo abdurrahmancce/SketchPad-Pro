@@ -327,16 +327,14 @@ class CanvasManager:
         else:
             img.save(filepath, "PNG")
 
-    # ── Get PNG bytes for AI ──────────────────────────────
+    #  Get PNG bytes for AI 
     def get_png_bytes(self):
         buf = io.BytesIO()
         self.pil_image.convert("RGB").save(buf, "PNG")
         return buf.getvalue()
 
 
-# ═══════════════════════════════════════════════════════════
 #  DRAWING APP  — main window and UI
-# ═══════════════════════════════════════════════════════════
 
 class DrawingApp:
     """Main application class — owns the root window and all widgets."""
@@ -352,7 +350,7 @@ class DrawingApp:
         self.theme_name = "dark"
         self.T = THEMES[self.theme_name]
 
-        # ── Root window ──────────────────────────────────
+        # Root window 
         self.root = tk.Tk()
         self.root.title("✏️  SketchPad Pro")
         self.root.geometry("1200x780")
@@ -364,16 +362,16 @@ class DrawingApp:
         except Exception:
             pass
 
-        # ── Managers ─────────────────────────────────────
+        #  Managers 
         self.tm = ToolManager()
 
-        # ── Build UI ─────────────────────────────────────
+        #  Build UI 
         self._build_toolbar()
         self._build_main_area()
         self._build_status_bar()
         self._apply_theme()
 
-        # ── Keyboard shortcuts ────────────────────────────
+        #  Keyboard shortcuts 
         self.root.bind("<Control-s>", lambda e: self._save())
         self.root.bind("<Control-z>", lambda e: self.cm.undo())
         self.root.bind("<Control-n>", lambda e: self._new_canvas())
@@ -382,9 +380,7 @@ class DrawingApp:
         # update status bar every 500 ms
         self._update_status()
 
-    # ════════════════════════════════════════════════════
     #  UI BUILDER METHODS
-    # ════════════════════════════════════════════════════
 
     def _build_toolbar(self):
         """Top toolbar with tools, actions, and settings."""
@@ -392,7 +388,7 @@ class DrawingApp:
         self.toolbar.pack(side="top", fill="x")
         self.toolbar.pack_propagate(False)
 
-        # ── Left: Logo ──────────────────────────────────
+        #  Left: Logo 
         logo = tk.Label(self.toolbar, text="✏️ SketchPad Pro",
                         font=("Segoe UI", 13, "bold"), padx=12)
         logo.pack(side="left", pady=8)
