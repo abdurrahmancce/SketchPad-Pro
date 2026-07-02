@@ -1,28 +1,10 @@
-"""
-╔══════════════════════════════════════════════════════════╗
-║           SketchPad Pro — Drawing Application            ║
-║           Built with Python Tkinter + Pillow             ║
-╚══════════════════════════════════════════════════════════╝
-
-Features:
-  • Freehand drawing with adjustable brush
-  • Eraser, Shape tools (Line, Rect, Circle)
-  • Color picker + palette
-  • Undo (Ctrl+Z), Save (Ctrl+S), New (Ctrl+N)
-  • Fill bucket, Text insertion, Grid mode
-  • Dark/Light theme switch
-  • Open & edit existing images
-  • Export as PNG / JPG / PDF
-  • AI sketch recognition via Claude API
-"""
-
 import tkinter as tk
 from tkinter import ttk, colorchooser, filedialog, messagebox, simpledialog
 import math
 import json
 import os
 
-# ── Pillow (PIL) ──────────────────────────────────────────
+#  Pillow (PIL) 
 try:
     from PIL import Image, ImageDraw, ImageTk, ImageFont, ImageFilter
     PIL_AVAILABLE = True
