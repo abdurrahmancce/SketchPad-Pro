@@ -12,7 +12,7 @@ except ImportError:
     PIL_AVAILABLE = False
     print("⚠  Pillow not found. Install with: pip install Pillow")
 
-# ── Anthropic (optional AI feature) ──────────────────────
+#  Anthropic (optional AI feature) 
 try:
     import anthropic
     import base64
@@ -22,9 +22,7 @@ except ImportError:
     ANTHROPIC_AVAILABLE = False
 
 
-# ═══════════════════════════════════════════════════════════
 #  THEME DEFINITIONS
-# ═══════════════════════════════════════════════════════════
 
 THEMES = {
     "dark": {
@@ -62,9 +60,7 @@ THEMES = {
 }
 
 
-# ═══════════════════════════════════════════════════════════
 #  TOOL MANAGER  — tracks active tool and its state
-# ═══════════════════════════════════════════════════════════
 
 class ToolManager:
     """Manages active tool, brush settings, and drawing state."""
@@ -106,9 +102,7 @@ class ToolManager:
         return (r, g, b, alpha)
 
 
-# ═══════════════════════════════════════════════════════════
 #  CANVAS MANAGER  — wraps Tkinter Canvas + PIL image sync
-# ═══════════════════════════════════════════════════════════
 
 class CanvasManager:
     """
