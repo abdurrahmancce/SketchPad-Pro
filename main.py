@@ -393,10 +393,10 @@ class DrawingApp:
                         font=("Segoe UI", 13, "bold"), padx=12)
         logo.pack(side="left", pady=8)
 
-        # ── Separator ────────────────────────────────────
+        #  Separator 
         self._vsep(self.toolbar)
 
-        # ── Tool buttons ─────────────────────────────────
+        #  Tool buttons 
         self.tool_buttons = {}
         for tool in ToolManager.TOOLS:
             if tool == "🔲 Grid":
@@ -411,7 +411,7 @@ class DrawingApp:
             btn.pack(side="left", padx=2, pady=6)
             self.tool_buttons[tool] = btn
 
-        # ── Separator ────────────────────────────────────
+        #  Separator 
         self._vsep(self.toolbar)
 
         # ── Action buttons ────────────────────────────────
