@@ -261,7 +261,7 @@ class CanvasManager:
         self._last_y = None
         self._refresh_canvas()
 
-    # ── Flood fill ───────────────────────────────────────
+    #  Flood fill 
     def _flood_fill(self, x, y):
         """Seed-fill using PIL ImageDraw.floodfill."""
         if not PIL_AVAILABLE:
@@ -297,7 +297,7 @@ class CanvasManager:
                                fill=self.tm.get_pil_color(), font=font)
             self._refresh_canvas()
 
-    # ── Clear canvas ─────────────────────────────────────
+    #  Clear canvas 
     def clear(self):
         self.push_undo()
         bg = self.tm.bg_color
