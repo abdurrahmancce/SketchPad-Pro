@@ -414,7 +414,7 @@ class DrawingApp:
         #  Separator 
         self._vsep(self.toolbar)
 
-        # ── Action buttons ────────────────────────────────
+        #  Action buttons 
         actions = [
             ("↩ Undo",    self.cm_undo),
             ("🗑 Clear",   self._new_canvas),
