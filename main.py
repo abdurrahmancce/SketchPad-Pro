@@ -430,7 +430,7 @@ class DrawingApp:
             btn.pack(side="left", padx=2, pady=6)
             self.action_btns[label] = btn
 
-        # ── Right side: theme + grid ──────────────────────
+        #  Right side: theme + grid 
         self._vsep(self.toolbar)
 
         self.grid_var = tk.BooleanVar(value=False)
