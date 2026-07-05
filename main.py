@@ -307,7 +307,7 @@ class CanvasManager:
         self.pil_draw  = ImageDraw.Draw(self.pil_image, "RGBA")
         self._draw_grid()
 
-    # ── Open image ───────────────────────────────────────
+    #  Open image 
     def open_image(self, filepath):
         self.push_undo()
         img = Image.open(filepath).convert("RGBA")
@@ -316,7 +316,7 @@ class CanvasManager:
         self.pil_draw  = ImageDraw.Draw(self.pil_image, "RGBA")
         self._refresh_canvas()
 
-    # ── Save / Export ─────────────────────────────────────
+    #  Save / Export 
     def save(self, filepath):
         ext = os.path.splitext(filepath)[1].lower()
         img = self.pil_image.convert("RGB")
