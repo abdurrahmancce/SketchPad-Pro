@@ -476,7 +476,7 @@ class DrawingApp:
 
         self._build_sidebar()
 
-        # ── Canvas area ──────────────────────────────────
+        #  Canvas area 
         canvas_frame = tk.Frame(self.main_frame, bd=0)
         canvas_frame.pack(side="left", fill="both", expand=True, padx=8, pady=8)
 
@@ -504,7 +504,7 @@ class DrawingApp:
                      font=("Segoe UI", 8, "bold"),
                      anchor="w", padx=10).pack(fill="x", pady=(10, 2))
 
-        # ── Color preview ────────────────────────────────
+        #  Color preview 
         section_label("ACTIVE COLOR")
         self.color_preview = tk.Canvas(self.sidebar,
                                        width=120, height=36,
