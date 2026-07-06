@@ -513,7 +513,7 @@ class DrawingApp:
         self.color_preview.pack(padx=16, pady=4)
         self.color_preview.bind("<Button-1>", lambda e: self._pick_color())
 
-        # ── Palette grid ─────────────────────────────────
+        #  Palette grid 
         section_label("PALETTE")
         palette_frame = tk.Frame(self.sidebar)
         palette_frame.pack(padx=10)
@@ -525,7 +525,7 @@ class DrawingApp:
             btn.grid(row=i//4, column=i%4, padx=2, pady=2)
             btn.bind("<Button-1>", lambda e, col=c: self._set_color(col))
 
-        # ── Brush size ───────────────────────────────────
+        #  Brush size 
         section_label("BRUSH SIZE")
         self.size_var = tk.IntVar(value=self.tm.brush_size)
         size_slider = ttk.Scale(self.sidebar, from_=1, to=60,
@@ -543,7 +543,7 @@ class DrawingApp:
                                        bd=0, highlightthickness=0)
         self.brush_preview.pack(pady=4)
 
-        # ── Opacity ──────────────────────────────────────
+        #  Opacity 
         section_label("OPACITY")
         self.opacity_var = tk.IntVar(value=255)
         opacity_slider = ttk.Scale(self.sidebar, from_=10, to=255,
