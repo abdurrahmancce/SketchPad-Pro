@@ -555,7 +555,7 @@ class DrawingApp:
                                       text="100%", font=("Segoe UI", 8))
         self.opacity_label.pack()
 
-        # ── Canvas background ─────────────────────────────
+        #  Canvas background 
         section_label("CANVAS BG")
         bg_btn = tk.Button(self.sidebar, text="🎨 Change BG",
                            font=("Segoe UI", 8),
@@ -565,7 +565,7 @@ class DrawingApp:
         bg_btn.pack(fill="x", padx=14, pady=4)
         self.sidebar_bg_btn = bg_btn
 
-        # ── Export format ─────────────────────────────────
+        #  Export format 
         section_label("EXPORT AS")
         export_frame = tk.Frame(self.sidebar)
         export_frame.pack(padx=10, pady=4)
@@ -600,9 +600,7 @@ class DrawingApp:
         self.coord_label.pack(side="right", fill="y")
         self.cm.canvas.bind("<Motion>", self._on_mouse_move)
 
-    # ════════════════════════════════════════════════════
     #  EVENT / ACTION HANDLERS
-    # ════════════════════════════════════════════════════
 
     def cm_undo(self):
         self.cm.undo()
@@ -692,7 +690,7 @@ class DrawingApp:
             self.cm.save(path)
             messagebox.showinfo("Saved", f"Drawing saved to:\n{path}")
 
-    # ── AI Analysis ───────────────────────────────────────
+    #  AI Analysis 
     def _ai_analyze(self):
         if not ANTHROPIC_AVAILABLE:
             messagebox.showinfo("AI Unavailable",
