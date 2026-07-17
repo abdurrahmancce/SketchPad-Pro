@@ -878,9 +878,7 @@ class DrawingApp:
         )
         self.root.after(500, self._update_status)
 
-    # ════════════════════════════════════════════════════
     #  HELPERS
-    # ════════════════════════════════════════════════════
 
     def _vsep(self, parent):
         """Vertical separator for toolbar."""
