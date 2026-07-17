@@ -779,9 +779,7 @@ class DrawingApp:
         except Exception as e:
             messagebox.showerror("AI Error", str(e))
 
-    # ════════════════════════════════════════════════════
     #  THEME + APPEARANCE
-    # ════════════════════════════════════════════════════
 
     def _toggle_theme(self):
         self.theme_name = "light" if self.theme_name == "dark" else "dark"
