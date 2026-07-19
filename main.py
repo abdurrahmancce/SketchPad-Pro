@@ -469,7 +469,7 @@ class DrawingApp:
         self.main_frame = tk.Frame(self.root, bd=0)
         self.main_frame.pack(fill="both", expand=True)
 
-        # ── Sidebar (left) ───────────────────────────────
+        #  Sidebar (left) 
         self.sidebar = tk.Frame(self.main_frame, width=160, bd=0)
         self.sidebar.pack(side="left", fill="y", padx=0)
         self.sidebar.pack_propagate(False)
